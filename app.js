@@ -67,23 +67,24 @@ menu.on('select', function (label) {
 				npm init -y && \
 				echo "<html>\n"\
 					"<head>\n"\
-						"<title>Document</title>\n"\
+					"	<title>Document</title>\n"\
 					"</head>\n"\
 					"<body>\n"\
-						"\n"\
+					"	\n"\
 					"</body>\n"\
 					"</html>\n"\
 					> src/index.html &&\
 				sublime .
 			`;
 			exec(cmd, function(error, stdout, stderr) {
+				menu.close();
 				// command output is in stdout
 				console.log(stdout)
 			});
 			if(err){
 				console.log(err)
 			}
-		})
+		});
 
 	} else if (label === 'Add label') {	
 		//menu.close();	
